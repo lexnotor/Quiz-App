@@ -95,7 +95,7 @@ article#accueil button {
     Style interro 
     ----------------------------------*/
 article#interrogation {
-    display: none;
+    display: block;
 }
 article#interrogation * {
     color: #555555;
@@ -141,8 +141,21 @@ article#interrogation #answers_section .answer {
     border: 1px solid #dddddd;
     padding: 10px;
 }
-article#interrogation #answers_section span {
-    padding: 0px 10px;
+article#interrogation #answers_section .answer div {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 12px;
+    border: 1px solid #555555;
+    margin-right: 5px;
+}
+article#interrogation #answers_section .answer > input:checked + label >div {
+    border: 1px solid #028A3D;
+    background-color: #028A3D;
+}
+article#interrogation #answers_section label {
+    padding: 0px 5px;
+    display: block;
 }
 
 article#interrogation #question_btn_control {
@@ -172,7 +185,7 @@ article#interrogation #question_btn_control>button[disabled] {
     Style resultat 
     ----------------------------------*/
 article#resultat {
-    display: block;
+    display: none;
 }
 
 article#resultat * {
