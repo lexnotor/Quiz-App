@@ -34,6 +34,13 @@ section>article {
     background-color: white;
     display: none;
 }
+button {
+    box-shadow: 0px 4px 4px #dddddd;
+    cursor: pointer;
+}
+button:hover {
+    box-shadow: 0px 4px 4px #b6b6b6;
+}
 /* -----------------------------------
     Style acceuil
     ----------------------------------*/
@@ -136,6 +143,29 @@ article#interrogation #answers_section .answer {
 }
 article#interrogation #answers_section span {
     padding: 0px 10px;
+}
+
+article#interrogation #question_btn_control {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+article#interrogation #question_btn_control>button {
+    display: block;
+    width: 150px;
+    padding: 10px 30px;
+    font-size: large;
+    color: white;
+    border: 0px;
+}
+article#interrogation #question_btn_control>button:first-child {
+    background-color: #EC880C;
+}
+article#interrogation #question_btn_control>button:last-child {
+    background-color: #028A3D;
+}
+article#interrogation #question_btn_control>button[disabled] {
+    opacity: 0.7;
 }
 
 /* -----------------------------------
