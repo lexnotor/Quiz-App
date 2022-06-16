@@ -87,7 +87,20 @@ article#accueil button {
 /* -----------------------------------
     Style interro 
     ----------------------------------*/
-
+article#interrogation {
+    display: block;
+}
+article#interrogation * {
+    color: #555555;
+}
+article#interrogation #question {
+    display: block;
+    text-align: center;
+}
+article#interrogation #question {
+    display: block;
+    text-align: center;
+}
 
 /* -----------------------------------
     Style resultat 

@@ -31,33 +31,35 @@
             <button>Commencer</button>
         </article>
         <article id="interrogation">
-            <p>Quel est le type d'un fichier javascript</p>
-            <div>
+            <p id="question">Quel est le type d'un fichier javascript ?</p>
+            <div id="progression">
                 <div>
-                    <span>Question 1/15</span>
-                    <span>30</span>
+                    <span id="progression_value">Question 1/15</span>
+                    <span id="elapstime">30</span>
                 </div>
-                <div></div>
+                <div id="barre_progression">
+                    <span></span>
+                </div>
             </div>
-            <div>
-                <div>
-                    <input type="checkbox" name="" id="">
+            <div id="answers_section">
+                <div class="answer">
+                    <input type="checkbox" name="ans01" id="ans01">
                     <span>.ts</span>
                 </div>
-                <div>
-                    <input type="checkbox" name="" id="">
+                <div class="answer">
+                    <input type="checkbox" name="ans02" id="ans02">
                     <span>.jsx</span>
                 </div>
-                <div>
-                    <input type="checkbox" name="" id="">
+                <div class="answer">
+                    <input type="checkbox" name="ans03" id="ans03">
                     <span>.js</span>
                 </div>
-                <div>
-                    <input type="checkbox" name="" id="">
+                <div class="answer">
+                    <input type="checkbox" name="ans04" id="ans04">
                     <span>.j</span>
                 </div>
             </div>
-            <div>
+            <div id="question_btn_control">
                 <button>Quitter</button>
                 <button>Suivant</button>
             </div>
