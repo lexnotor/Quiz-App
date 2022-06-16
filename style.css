@@ -34,3 +34,61 @@ section>article {
     background-color: white;
     display: none;
 }
+/* -----------------------------------
+    Style acceuil
+    ----------------------------------*/
+article#accueil {
+    display: none;
+}
+
+article#accueil * {
+    color: #555555;
+}
+
+article#accueil>h2 {
+    text-align: center;
+}
+
+article#accueil>p {
+    margin: 30px 20px;
+    text-align: center;
+}
+
+article#accueil label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+article#accueil input[type="text"] {
+    display: block;
+    width: 100%;
+    padding: 10px 10px;
+    outline: none;
+}
+
+article#accueil #identification {
+    margin: 40px auto;
+}
+
+article#accueil .identifiant {
+    margin: 20px auto;
+}
+
+article#accueil button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 30px;
+    font-size: large;
+    color: white;
+    background-color: #028A3D;
+    border: 0px;
+}
+
+/* -----------------------------------
+    Style interro 
+    ----------------------------------*/
+
+
+/* -----------------------------------
+    Style resultat 
+    ----------------------------------*/
