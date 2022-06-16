@@ -123,6 +123,20 @@ article#interrogation #barre_progression > span{
     background-color: #028A3D;
     border-radius: 5px;
 }
+article#interrogation #answers_section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+    margin: 40px auto;
+}
+article#interrogation #answers_section .answer {
+    border: 1px solid #dddddd;
+    padding: 10px;
+}
+article#interrogation #answers_section span {
+    padding: 0px 10px;
+}
 
 /* -----------------------------------
     Style resultat 
