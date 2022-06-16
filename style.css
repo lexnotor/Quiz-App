@@ -95,7 +95,7 @@ article#accueil button {
     Style interro 
     ----------------------------------*/
 article#interrogation {
-    display: block;
+    display: none;
 }
 article#interrogation * {
     color: #555555;
@@ -171,3 +171,48 @@ article#interrogation #question_btn_control>button[disabled] {
 /* -----------------------------------
     Style resultat 
     ----------------------------------*/
+article#resultat {
+    display: block;
+}
+
+article#resultat * {
+    color: #555555;
+}
+article#resultat h2 {
+    text-align: center;
+    margin: 40px auto;
+}
+article#resultat p {
+    text-align: center;
+    margin-bottom: 40px;
+}
+article#resultat .mdi {
+    text-align: center;
+    font-size: 100px;
+}
+article#resultat .mdi-check-circle-outline {
+    color: #028A3D;
+}
+article#resultat .mdi-close-circle-outline {
+    color: #FF3838;
+}
+article#resultat #points {
+    text-align: center;
+    font-weight: bolder;
+    margin: 20px auto;
+}
+
+article#resultat div:last-child {
+    text-align: center;
+}
+article#resultat button {
+    display: block;
+    width: 150px;
+    padding: 10px 30px;
+    margin: auto;
+    margin-bottom: 30px;
+    font-size: large;
+    color: white;
+    border: 0px;
+    background-color: #0880D6;
+}
