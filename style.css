@@ -6,6 +6,7 @@
 * {
     font-family: 'Inter', sans-serif;
     box-sizing: border-box;
+    transition: background-color 500ms, border 500ms, width 500ms, display 500ms;
 }
 
 html,
@@ -137,7 +138,7 @@ article#interrogation #barre_progression {
 
 article#interrogation #barre_progression > span{
     display: block;
-    width: 30%;
+    width: 0%;
     height: 7px;
     background-color: #028A3D;
     border-radius: 5px;
@@ -153,6 +154,7 @@ article#interrogation #answers_section .answer {
     border: 1px solid #dddddd;
     padding: 10px;
 }
+
 article#interrogation #answers_section .answer div {
     display: inline-block;
     width: 12px;

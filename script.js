@@ -114,6 +114,7 @@ class Quizz_app {
                 // S'il est correcte on incremente this.success
             });
         }
+        this.cur_elm.assertions.forEach((el) => el.parentNode.style.border = "1px solid #dddddd")
         // Si nous avons deja atteint la dernière question, on va à la page de resultat
         if (++this.user.i_quest >= this.question_list.length) this.init_resultat();
         else {
@@ -144,8 +145,12 @@ class Quizz_app {
      * @param {Event} e L'objet Event gerant l'evenement
      */
     active_next(e) {
-        if (e.target.checked)
+        this.cur_elm.assertions.forEach((el) => el.parentNode.style.border ="1px solid #dddddd")
+        if (e.target.checked) {
             this.cur_elm.boutons[1].disabled = false;
+            e.target.parentNode.style.border = "1px solid #028A3D";
+        }
+        document.querySelector('div').parentNode
     }
     /**
      * Cette methode gere l'affichage de la page des resultats
