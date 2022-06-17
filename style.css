@@ -21,6 +21,7 @@ body {
     ----------------------------------*/
 section {
     width: 100vw;
+    min-width: 420px;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -30,6 +31,8 @@ section {
 
 section>article {
     width: 400px;
+    min-width: 300px;
+    max-width: 400px;
     padding: 50px 30px;
     background-color: white;
     display: none;
@@ -45,7 +48,7 @@ button:hover {
     Style acceuil
     ----------------------------------*/
 article#accueil {
-    display: none;
+    display: block;
 }
 
 article#accueil * {
@@ -69,9 +72,18 @@ article#accueil label {
 article#accueil input[type="text"] {
     display: block;
     width: 100%;
-    padding: 10px 10px;
+    padding: 12px 12px;
     outline: none;
 }
+article#accueil input[type="text"].red_border {
+    border: 0.5px solid #FF3838;
+}
+
+article#accueil span.error {
+    font-size: 65%;
+    color: #FF3838;
+}
+
 
 article#accueil #identification {
     margin: 40px auto;
@@ -95,7 +107,7 @@ article#accueil button {
     Style interro 
     ----------------------------------*/
 article#interrogation {
-    display: block;
+    display: none;
 }
 article#interrogation * {
     color: #555555;
@@ -209,7 +221,7 @@ article#resultat .mdi-check-circle-outline {
 article#resultat .mdi-close-circle-outline {
     color: #FF3838;
 }
-article#resultat #points {
+article#resultat #result_points {
     text-align: center;
     font-weight: bolder;
     margin: 20px auto;

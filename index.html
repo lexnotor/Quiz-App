@@ -23,10 +23,12 @@
                 <div class="identifiant">
                     <label for="input_nom">Nom</label>
                     <input type="text" name="input_nom" id="input_nom">
+                    <span class="error" id="nom_error"></span>
                 </div>
                 <div class="identifiant">
                     <label for="input_email">Email</label>
                     <input type="text" name="input_email" id="input_email">
+                    <span class="error" id="email_error"></span>
                 </div>
             </div>
             <button>Commencer</button>
@@ -36,7 +38,7 @@
             <div id="progression">
                 <div>
                     <span id="progression_value">Question 1/15</span>
-                    <span id="elapstime">30</span>
+                    <span id="elapstime"></span>
                 </div>
                 <div id="barre_progression">
                     <span></span>
@@ -45,23 +47,19 @@
             <div id="answers_section">
                 <div class="answer">
                     <input type="radio" name="ans" id="ans01" hidden>
-                    
-                    <label for="ans01"><div></div>.ts</label>
+                    <label for="ans01"><div></div><span>.ts</span></label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="ans" id="ans02" hidden>
-                    
-                    <label for="ans02"><div></div>.jsx</label>
+                    <label for="ans02"><div></div><span>.jsx</span></label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="ans" id="ans03" hidden>
-                    
-                    <label for="ans03"><div></div>.js</label>
+                    <label for="ans03"><div></div><span>.js</span></label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="ans" id="ans04" hidden>
-                    
-                    <label for="ans04"><div></div>.j</label>
+                    <label for="ans04"><div></div><span>.j</span></label>
                 </div>
             </div>
             <div id="question_btn_control">
@@ -70,15 +68,16 @@
             </div>
         </article>
         <article id="resultat">
-            <h2>Joseph</h2>
-            <p>joseph@kinshasadigital.com</p>
-            <div class="mdi mdi-check-circle-outline"></div>
-            <div id="points">14/15</div>
+            <h2 id="result_nom">Joseph</h2>
+            <p id="result_email">joseph@kinshasadigital.com</p>
+            <div class="mdi mdi-check-circle-outline" id="result_symbole"></div>
+            <div id="result_points">14/15</div>
             <div>
-                <button>Acceuil</button>
+                <button id="result_recommencer">Acceuil</button>
             </div>
         </article>
     </section>
+    <script src="script.js"></script>
 </body>
 
 </html>
