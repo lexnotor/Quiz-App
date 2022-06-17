@@ -199,3 +199,7 @@ let myQuestion = [
     new Question("L'object JavaScript qui gére le DOM est  :", ["HTMLElement", "DOM", "Node", "document"], 3),
     new Question("Un fichier JavaScript a pour extension :", [".j", ".jsx", ".js", ".html"], 2),
 ];
+// Nous construisons notre Quiz App
+let myquizapp = new Quizz_app(myarticle, myQuestion);
+// Et debutons son utilisation
+myquizapp.init_accueil();
