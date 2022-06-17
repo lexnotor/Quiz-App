@@ -146,5 +146,33 @@ class Quizz_app {
         if (e.target.checked)
             this.cur_elm.boutons[1].disabled = false;
     }
-    
+    /**
+     * Cette methode gere l'affichage de la page des resultats
+     * Elle se charge aussi de stopper le compteur du temps
+     */
+    init_resultat() {
+        clearInterval(this.interval_controle);
+        this.page_list.forEach(el => el.style.display = "none");
+        this.page_list[2] ? (this.page_list[2].style.display = "block") : ('');
+        this.cur_elm = {};
+        this.cur_elm.page = this.page_list[2];
+        // Stockage des elements ici
+        this.cur_elm.nom = document.querySelector(`#${this.cur_elm.page.id} #result_nom`);
+        this.cur_elm.email = document.querySelector(`#${this.cur_elm.page.id} #result_email`);
+        this.cur_elm.symbole = document.querySelector(`#${this.cur_elm.page.id} #result_symbole`);
+        this.cur_elm.points = document.querySelector(`#${this.cur_elm.page.id} #result_points`);
+        this.cur_elm.restart = document.querySelector(`#${this.cur_elm.page.id} #result_recommencer`);
+        // Affichage des resultats
+        this.cur_elm.nom.textContent = this.user.nom;
+        this.cur_elm.email.textContent = this.user.email;
+        this.cur_elm.symbole.className = "mdi";
+        this.cur_elm.symbole.classList.toggle((this.success > 8) ? "mdi-check-circle-outline" : "mdi-close-circle-outline");
+        this.cur_elm.points.textContent = `${this.success}/15`;
+        // Ajout de l'evenement à notre bouton recommencer qui recharge juste la page
+        this.cur_elm.restart.addEventListener('click', this.reload_page);
+    }
+    /** La methode qui recharge le page */
+    reload_page() {
+        location.reload()
+    }
 }
