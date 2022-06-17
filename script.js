@@ -129,7 +129,7 @@ class Quizz_app {
             this.cur_elm.pgr_value.textContent = `Question ${this.user.i_quest + 1}/15`;
             this.cur_elm.barre_pgr.style.width = Math.floor(100 * (this.user.i_quest + 1) / 15) + '%';
             // Après l'affichage de la question, on initialise le compteur
-            this.temps = 20;
+            this.temps = 60;
         }
     }
     /**
