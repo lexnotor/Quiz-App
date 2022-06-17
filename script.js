@@ -119,6 +119,7 @@ class Quizz_app {
         else {
             // Sinon on passe à la question suivante
             this.cur_elm.boutons[1].disabled = true;
+            this.cur_elm.boutons[1].textContent = ((this.user.i_quest + 1) == this.question_list.length) ? "Terminer" : "Suivant";
             this.cur_elm.question.textContent = this.question_list[this.user.i_quest].phrase;
             this.cur_elm.assertions.forEach(input => input.checked = false);
             // Cette ligne permet d'afficher les differentes assertions à l'écran
