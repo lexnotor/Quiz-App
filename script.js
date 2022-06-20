@@ -48,7 +48,7 @@ class Quizz_app {
     commencer() {
         let [nom, email] = [this.cur_elm.inputs[0], this.cur_elm.inputs[1]];
         // On verifier les données saisis
-        let isOk = [nom.value.length > 3, /^.+@.+\..+$/.test(email.value.trim())];
+        let isOk = [nom.value.length > 2, /^[a-zA-Z_.0-9]{3,}@[a-zA-Z]{3,}\.[a-zA-Z]{2,}$/.test(email.value.trim())];
         // Si les données saisies sont incorrectes on reste sur la page, et on affiche l'erreur
         this.cur_elm.erreur[0].textContent = isOk[0] ? "" : "N'oubliez pas de renseigner votre nom avant de commencer le quiz";
         this.cur_elm.inputs[0].classList.toggle('red_border', !isOk[0]);
@@ -128,7 +128,6 @@ class Quizz_app {
                 this.cur_elm.labels[i].textContent = el;
             });
             this.cur_elm.pgr_value.textContent = `Question ${this.user.i_quest + 1}/15`;
-            this.cur_elm.barre_pgr.style.width = Math.floor(100 * (this.user.i_quest + 1) / 15) + '%';
             // Après l'affichage de la question, on initialise le compteur
             this.temps = 60;
         }
@@ -138,6 +137,7 @@ class Quizz_app {
      */
     counter() {
         this.cur_elm.elapstime.textContent = (this.temps > 0) ? (--this.temps) : 0;
+        this.cur_elm.barre_pgr.style.width = Math.ceil(100 * (this.temps+1) / 60) + '%';
         if (!this.temps) this.next_question(false);
     }
     /**
