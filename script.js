@@ -137,7 +137,7 @@ class Quizz_app {
      */
     counter() {
         this.cur_elm.elapstime.textContent = (this.temps > 0) ? (--this.temps) : 0;
-        this.cur_elm.barre_pgr.style.width = Math.ceil(100 * (this.temps+1) / 60) + '%';
+        this.cur_elm.barre_pgr.style.width = Math.ceil(100 * (this.temps) / 60) + '%';
         if (!this.temps) this.next_question(false);
     }
     /**

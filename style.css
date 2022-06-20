@@ -6,7 +6,7 @@
 * {
     font-family: 'Inter', sans-serif;
     box-sizing: border-box;
-    transition: background-color 500ms, border 500ms, width 200ms, display 500ms;
+    transition: background-color 500ms, border 500ms, width 200ms, display 500ms, transform 800ms;
 }
 
 html,
@@ -37,6 +37,7 @@ section>article {
     padding: 50px 30px;
     background-color: white;
     display: none;
+    transform: scale(1);
 }
 button {
     box-shadow: 0px 4px 4px #dddddd;
