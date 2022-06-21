@@ -52,7 +52,7 @@ class Quizz_app {
         // Si les données saisies sont incorrectes on reste sur la page, et on affiche l'erreur
         this.cur_elm.erreur[0].textContent = isOk[0] ? "" : (nom.value.length == 0 ? "N'oubliez pas de renseigner votre nom avant de commencer le quiz" : "Entrez un nom valide");
         this.cur_elm.inputs[0].classList.toggle('red_border', !isOk[0]);
-        this.cur_elm.erreur[1].textContent = isOk[1] ? "" : (email.value.length == 0 ? "N'oubliez pas de renseigner votre email avant de commencer le quiz" : "Entrez en email valide");
+        this.cur_elm.erreur[1].textContent = isOk[1] ? "" : (email.value.length == 0 ? "N'oubliez pas de renseigner votre email avant de commencer le quiz" : "Entrez un email valide");
         this.cur_elm.inputs[1].classList.toggle('red_border', !isOk[1]);
         if (!(isOk[0] && isOk[1])) return;
         // On stocke alors ces données
@@ -109,8 +109,12 @@ class Quizz_app {
         // S'il ne s'agit pas de la première question, alors on verifie le resultat pecedent
         if (!isFirst) {
             this.cur_elm.assertions.forEach((el, i) => {
-                if (el.checked && this.question_list[this.user.i_quest].correct == i)
+                
+                if (el.checked && this.question_list[this.user.i_quest].correct == i) {
                     this.success++;
+                    console.log("Reussi", i);
+                }
+                    
                 // S'il est correcte on incremente this.success
             });
         }
@@ -201,7 +205,7 @@ let myQuestion = [
     new Question("Une variable non declarée aura pour valeur :", ["null", "0", "Object", "undefined"], 3),
     new Question("Pour faire réference à un script js extene en html :", ["<script href='mon_script.js'>", "<script src='mon_script.js'>", "<link src='mon_script.js'>", "<rel link='mon_script.js'>"], 1),
     new Question("Pour executer alert() chaque 5s, on écrira :", ["setInterval(alert, 5000)", "setTimeout(alert, 5)", "setInterval(alert, 5)", "forTime(alert, 5000)"], 0),
-    new Question("Le nom correct d'une variable est :", ["ma_variable", "ma variable", "ma-variable", "mavariable()"], 1),
+    new Question("Le nom correct d'une variable est :", ["ma_variable", "ma variable", "ma-variable", "mavariable()"], 0),
     new Question("L'object JavaScript qui gére le DOM est  :", ["HTMLElement", "DOM", "Node", "document"], 3),
     new Question("Un fichier JavaScript a pour extension :", [".j", ".jsx", ".js", ".html"], 2),
 ];
