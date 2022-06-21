@@ -109,11 +109,8 @@ class Quizz_app {
         // S'il ne s'agit pas de la première question, alors on verifie le resultat pecedent
         if (!isFirst) {
             this.cur_elm.assertions.forEach((el, i) => {
-                
-                if (el.checked && this.question_list[this.user.i_quest].correct == i) {
+                if (el.checked && this.question_list[this.user.i_quest].correct == i)
                     this.success++;
-                    console.log("Reussi", i);
-                }
                     
                 // S'il est correcte on incremente this.success
             });
