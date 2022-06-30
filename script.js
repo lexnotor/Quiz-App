@@ -50,9 +50,9 @@ class Quizz_app {
         // On verifier les données saisis
         let isOk = [nom.value.length > 2, /^[a-zA-Z_.0-9]{3,}@[a-zA-Z]{3,}\.[a-zA-Z]{2,}$/.test(email.value.trim())];
         // Si les données saisies sont incorrectes on reste sur la page, et on affiche l'erreur
-        this.cur_elm.erreur[0].textContent = isOk[0] ? "" : (nom.value.length == 0 ? "N'oubliez pas de renseigner votre nom avant de commencer le quiz" : "Entrez un nom valide");
+        this.cur_elm.erreur[0].textContent = isOk[0] ? "" : (nom.value.trim().length == 0 ? "N'oubliez pas de renseigner votre nom avant de commencer le quiz" : "Entrez un nom valide");
         this.cur_elm.inputs[0].classList.toggle('red_border', !isOk[0]);
-        this.cur_elm.erreur[1].textContent = isOk[1] ? "" : (email.value.length == 0 ? "N'oubliez pas de renseigner votre email avant de commencer le quiz" : "Entrez un email valide");
+        this.cur_elm.erreur[1].textContent = isOk[1] ? "" : (email.value.trim().length == 0 ? "N'oubliez pas de renseigner votre email avant de commencer le quiz" : "Entrez un email valide");
         this.cur_elm.inputs[1].classList.toggle('red_border', !isOk[1]);
         if (!(isOk[0] && isOk[1])) return;
         // On stocke alors ces données
