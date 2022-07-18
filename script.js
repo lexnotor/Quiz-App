@@ -4,6 +4,13 @@ function Question(phrase = "", assertions = [""], correct = 0) {
     this.assertions = assertions;
     this.correct = correct;
 }
+/* Les icônes sur la page de resultats se chargent avec retard sur certaines plateformes
+    Pour y remedier, nous créeons des elements html qui vont permettre de precharger ces icônes
+ */
+let icone_pre_loader = [document.createElement("span"), document.createElement("span")];
+icone_pre_loader[0].classList.add("mdi", "mdi-check-circle-outline");
+icone_pre_loader[1].classList.add("mdi", "mdi-close-circle-outline");
+
 /* Créons l'objet représentant notre application Quiz App*/
 class Quizz_app {
     /**
@@ -47,12 +54,15 @@ class Quizz_app {
     }
     commencer() {
         let [nom, email] = [this.cur_elm.inputs[0], this.cur_elm.inputs[1]];
+        // On creer des variables qui stockent les phrases à afficher en cas erreur
+        let nom_error = ["N'oubliez pas de renseigner votre nom avant de commencer le quiz", "Entrez un nom valide entre 2 et 50 caractéres"];
+        let mail_error = ["N'oubliez pas de renseigner votre email avant de commencer le quiz", "Entrez un email valide"];
         // On verifier les données saisis
-        let isOk = [nom.value.length > 2, /^[a-zA-Z_.0-9]{3,}@[a-zA-Z]{3,}\.[a-zA-Z]{2,}$/.test(email.value.trim())];
+        let isOk = [nom.value.length > 2 && nom.value.length < 50, /^[a-zA-Z_.0-9]{3,20}@[a-zA-Z0-9]{3,15}\.[a-zA-Z]{2,10}$/.test(email.value.trim())];
         // Si les données saisies sont incorrectes on reste sur la page, et on affiche l'erreur
-        this.cur_elm.erreur[0].textContent = isOk[0] ? "" : (nom.value.trim().length == 0 ? "N'oubliez pas de renseigner votre nom avant de commencer le quiz" : "Entrez un nom valide");
+        this.cur_elm.erreur[0].textContent = isOk[0] ? "" : (nom.value.trim().length == 0 ? nom_error[0] : nom_error[1]);
         this.cur_elm.inputs[0].classList.toggle('red_border', !isOk[0]);
-        this.cur_elm.erreur[1].textContent = isOk[1] ? "" : (email.value.trim().length == 0 ? "N'oubliez pas de renseigner votre email avant de commencer le quiz" : "Entrez un email valide");
+        this.cur_elm.erreur[1].textContent = isOk[1] ? "" : (email.value.trim().length == 0 ? mail_error[0] : mail_error[1]);
         this.cur_elm.inputs[1].classList.toggle('red_border', !isOk[1]);
         if (!(isOk[0] && isOk[1])) return;
         // On stocke alors ces données
@@ -111,7 +121,7 @@ class Quizz_app {
             this.cur_elm.assertions.forEach((el, i) => {
                 if (el.checked && this.question_list[this.user.i_quest].correct == i)
                     this.success++;
-                    
+
                 // S'il est correcte on incremente this.success
             });
         }
@@ -146,7 +156,7 @@ class Quizz_app {
      * @param {Event} e L'objet Event gerant l'evenement
      */
     active_next(e) {
-        this.cur_elm.assertions.forEach((el) => el.parentNode.style.border ="1px solid #dddddd")
+        this.cur_elm.assertions.forEach((el) => el.parentNode.style.border = "1px solid #dddddd")
         if (e.target.checked) {
             this.cur_elm.boutons[1].disabled = false;
             e.target.parentNode.style.border = "1px solid #028A3D";
